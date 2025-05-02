@@ -20,20 +20,32 @@ dialect-mcps/
   │   └── launch-token/
   ├── jupiter/
   │   ├── swap/
-  │   ├── perps/
-  │   └── dao/
+  │   ├── dao-claim/
+  │   ├── dao-stake/
+  │   ├── dao-unstake/
+  │   ├── perps-add-collateral/
+  │   ├── perps-close/
+  │   ├── perps-open/
+  │   ├── perps-remove-collateral/
+  │   ├── perps-stop-loss/
+  │   └── perps-take-profit/
   ├── drift/
-  │   ├── perps/
-  │   └── vaults/
+  │   ├── perps-open/
+  │   ├── perps-close/
+  │   ├── vaults-deposit/
+  │   └── vaults-withdraw/
   ├── save/
-  │   └── reserves/
+  │   ├── reserves-deposit/
+  │   └── reserves-withdraw/
   ├── marginfi/
   │   ├── supply/
   │   └── withdraw/
   └── raydium/
       ├── add-liquidity/
       ├── create-position/
-      └── staking/
+      ├── staking-stake/
+      ├── staking-unstake/
+      └── staking-claim/
 ```
 
 Each MCP is an independent FastMCP server for a specific Dialect Solana Blink.
