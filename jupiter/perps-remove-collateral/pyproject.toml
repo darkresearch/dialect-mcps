@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "jupiter-perps-mcp"
+name = "jupiter-perps-remove-collateral-mcp"
 version = "0.1.0"
-description = "An MCP server for Jupiter Perpetuals using Dialect Blink"
+description = "An MCP server for removing collateral from positions in Jupiter Perps DEX using Dialect Blink"
 requires-python = ">=3.10"
 authors = [
     {name = "Dark Research"}
