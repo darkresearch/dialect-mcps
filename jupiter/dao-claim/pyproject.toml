@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "jupiter-dao-mcp"
+name = "jupiter-dao-claim-mcp"
 version = "0.1.0"
-description = "An MCP server for Jupiter DAO using Dialect Blink"
+description = "An MCP server for claiming ASR rewards from Jupiter DAO using Dialect Blink"
 requires-python = ">=3.10"
 authors = [
     {name = "Dark Research"}
