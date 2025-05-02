@@ -1,11 +1,10 @@
-# Raydium Create Position MCP Server
+# Raydium Staking Claim MCP Server
 
-A FastMCP server for creating positions in Raydium concentrated liquidity pools via Dialect Blink.
+A FastMCP server for claiming rewards from Raydium staking via Dialect Blink.
 
 ## Features
 
-- Simple MCP interface for Raydium concentrated liquidity positions
-- Support for custom price ranges
+- Simple MCP interface for claiming rewards from Raydium staking
 - Handles Dialect Blink integration transparently
 - Easy to configure and deploy
 
@@ -19,7 +18,7 @@ A FastMCP server for creating positions in Raydium concentrated liquidity pools 
 1. Clone the repository:
    ```bash
    git clone https://github.com/darkresearch/dialect-mcps.git
-   cd dialect-mcps/raydium/create-position
+   cd dialect-mcps/raydium/staking-claim
    ```
 
 2. Install dependencies using uv:
@@ -54,18 +53,13 @@ fastmcp dev main.py
 To make the MCP available in Claude Desktop:
 
 ```bash
-fastmcp install main.py --name "Raydium Create Position"
+fastmcp install main.py --name "Raydium Staking Claim"
 ```
 
 ### Example Requests
 
-The MCP exposes a single `raydium_create_position` tool which accepts the following parameters:
+The MCP exposes a single `raydium_staking_claim` tool which accepts the following parameter:
 
-- `pool_id`: Pool ID for the Raydium concentrated liquidity pool
-- `price_lower`: Lower price bound for the position
-- `price_upper`: Upper price bound for the position
-- `amount_a`: Amount of token A to add
-- `amount_b`: Amount of token B to add
 - `tx_sender_pubkey`: Solana account public key of the transaction sender
 
 ## Environment Variables

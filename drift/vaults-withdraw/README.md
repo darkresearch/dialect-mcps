@@ -1,11 +1,12 @@
-# Raydium Staking MCP Server
+# Drift Vaults Withdraw MCP Server
 
-A FastMCP server for staking tokens in Raydium via Dialect Blink.
+A FastMCP server for withdrawing from Drift vaults via Dialect Blink.
 
 ## Features
 
-- Simple MCP interface for Raydium staking operations
-- Support for staking and unstaking tokens
+- Simple MCP interface for withdrawing from Drift vaults
+- Support for both strategy vaults and insurance fund vaults
+- Configurable withdraw amount
 - Handles Dialect Blink integration transparently
 - Easy to configure and deploy
 
@@ -19,7 +20,7 @@ A FastMCP server for staking tokens in Raydium via Dialect Blink.
 1. Clone the repository:
    ```bash
    git clone https://github.com/darkresearch/dialect-mcps.git
-   cd dialect-mcps/raydium/staking
+   cd dialect-mcps/drift/vaults-withdraw
    ```
 
 2. Install dependencies using uv:
@@ -54,16 +55,16 @@ fastmcp dev main.py
 To make the MCP available in Claude Desktop:
 
 ```bash
-fastmcp install main.py --name "Raydium Staking"
+fastmcp install main.py --name "Drift Vaults Withdraw"
 ```
 
 ### Example Requests
 
-The MCP exposes a single `raydium_staking` tool which accepts the following parameters:
+The MCP exposes a single `drift_vaults_withdraw` tool which accepts the following parameters:
 
-- `action`: Action to perform ("stake" or "unstake")
-- `pool_id`: Pool ID for the Raydium staking pool
-- `amount`: Amount to stake or unstake
+- `vault_type`: Vault type (strategy-vaults or insurance-fund-vaults)
+- `vault_id`: Identifier for a specific vault
+- `amount`: Amount to be withdrawn from the vault
 - `tx_sender_pubkey`: Solana account public key of the transaction sender
 
 ## Environment Variables

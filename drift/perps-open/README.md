@@ -1,12 +1,12 @@
-# Drift Perps MCP Server
+# Drift Perps Open MCP Server
 
-A FastMCP server for interacting with Drift Perpetuals via Dialect Blink.
+A FastMCP server for opening positions in Drift Perps DEX via Dialect Blink.
 
 ## Features
 
-- Simple MCP interface for Drift perpetual positions
-- Support for long and short positions
-- Configurable leverage
+- Simple MCP interface for opening positions in Drift Perps DEX
+- Support for both long and short positions
+- Configurable leverage and amount
 - Handles Dialect Blink integration transparently
 - Easy to configure and deploy
 
@@ -20,7 +20,7 @@ A FastMCP server for interacting with Drift Perpetuals via Dialect Blink.
 1. Clone the repository:
    ```bash
    git clone https://github.com/darkresearch/dialect-mcps.git
-   cd dialect-mcps/drift/perps
+   cd dialect-mcps/drift/perps-open
    ```
 
 2. Install dependencies using uv:
@@ -55,17 +55,18 @@ fastmcp dev main.py
 To make the MCP available in Claude Desktop:
 
 ```bash
-fastmcp install main.py --name "Drift Perps"
+fastmcp install main.py --name "Drift Perps Open"
 ```
 
 ### Example Requests
 
-The MCP exposes a single `drift_perps` tool which accepts the following parameters:
+The MCP exposes a single `drift_perps_open` tool which accepts the following parameters:
 
-- `market`: Market identifier (e.g., "SOL-PERP")
-- `side`: Position side ("long" or "short")
-- `size`: Size of the position in USD
-- `leverage`: Leverage to use (e.g., 5 for 5x)
+- `perp_token`: Token market for the perpetual (e.g., SOL)
+- `position_type`: Specifies which position is to be opened (e.g., long, short)
+- `paying_token`: Token to be used to open position (e.g., USDC)
+- `amount`: Amount to be deposited
+- `leverage`: Leverage multiplier to be used
 - `tx_sender_pubkey`: Solana account public key of the transaction sender
 
 ## Environment Variables

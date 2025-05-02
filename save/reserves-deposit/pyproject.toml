@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "raydium-staking-mcp"
+name = "save-reserves-deposit-mcp"
 version = "0.1.0"
-description = "An MCP server for staking tokens in Raydium using Dialect Blink"
+description = "An MCP server for depositing into Save Protocol reserves using Dialect Blink"
 requires-python = ">=3.10"
 authors = [
     {name = "Dark Research"}

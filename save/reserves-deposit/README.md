@@ -1,11 +1,12 @@
-# Save Reserves MCP Server
+# Save Reserves Deposit MCP Server
 
-A FastMCP server for interacting with Save Reserves via Dialect Blink.
+A FastMCP server for depositing into Save Protocol reserves via Dialect Blink.
 
 ## Features
 
-- Simple MCP interface for Save Reserves
-- Support for deposits and withdrawals
+- Simple MCP interface for depositing into Save Protocol reserves
+- Support for specifying reserve address and token mint
+- Configurable deposit amount
 - Handles Dialect Blink integration transparently
 - Easy to configure and deploy
 
@@ -19,7 +20,7 @@ A FastMCP server for interacting with Save Reserves via Dialect Blink.
 1. Clone the repository:
    ```bash
    git clone https://github.com/darkresearch/dialect-mcps.git
-   cd dialect-mcps/save/reserves
+   cd dialect-mcps/save/reserves-deposit
    ```
 
 2. Install dependencies using uv:
@@ -54,16 +55,16 @@ fastmcp dev main.py
 To make the MCP available in Claude Desktop:
 
 ```bash
-fastmcp install main.py --name "Save Reserves"
+fastmcp install main.py --name "Save Reserves Deposit"
 ```
 
 ### Example Requests
 
-The MCP exposes a single `save_reserves` tool which accepts the following parameters:
+The MCP exposes a single `save_reserves_deposit` tool which accepts the following parameters:
 
-- `action`: Action to perform ("deposit" or "withdraw")
-- `token`: Token symbol (e.g., "USDC")
-- `amount`: Amount to deposit or withdraw
+- `reserve_address`: Reserve address identifier
+- `token_mint`: Token mint address
+- `amount`: Amount to be deposited
 - `tx_sender_pubkey`: Solana account public key of the transaction sender
 
 ## Environment Variables

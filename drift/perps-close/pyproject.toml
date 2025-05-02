@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "raydium-create-position-mcp"
+name = "drift-perps-close-mcp"
 version = "0.1.0"
-description = "An MCP server for creating positions in Raydium concentrated liquidity pools using Dialect Blink"
+description = "An MCP server for closing positions in Drift Perps DEX using Dialect Blink"
 requires-python = ">=3.10"
 authors = [
     {name = "Dark Research"}

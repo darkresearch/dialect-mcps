@@ -1,10 +1,12 @@
-# Raydium Add Liquidity MCP Server
+# Drift Perps Close MCP Server
 
-A FastMCP server for adding liquidity to Raydium pools via Dialect Blink.
+A FastMCP server for closing positions in Drift Perps DEX via Dialect Blink.
 
 ## Features
 
-- Simple MCP interface for Raydium liquidity additions
+- Simple MCP interface for closing positions in Drift Perps DEX
+- Works with both long and short positions
+- Configurable amount to close
 - Handles Dialect Blink integration transparently
 - Easy to configure and deploy
 
@@ -18,7 +20,7 @@ A FastMCP server for adding liquidity to Raydium pools via Dialect Blink.
 1. Clone the repository:
    ```bash
    git clone https://github.com/darkresearch/dialect-mcps.git
-   cd dialect-mcps/raydium/add-liquidity
+   cd dialect-mcps/drift/perps-close
    ```
 
 2. Install dependencies using uv:
@@ -53,16 +55,15 @@ fastmcp dev main.py
 To make the MCP available in Claude Desktop:
 
 ```bash
-fastmcp install main.py --name "Raydium Add Liquidity"
+fastmcp install main.py --name "Drift Perps Close"
 ```
 
 ### Example Requests
 
-The MCP exposes a single `raydium_add_liquidity` tool which accepts the following parameters:
+The MCP exposes a single `drift_perps_close` tool which accepts the following parameters:
 
-- `pool_id`: Pool ID for the Raydium liquidity pool
-- `amount_a`: Amount of token A to add
-- `amount_b`: Amount of token B to add
+- `perp_token`: Token market for the perpetual (e.g., SOL)
+- `amount`: Amount to close
 - `tx_sender_pubkey`: Solana account public key of the transaction sender
 
 ## Environment Variables
