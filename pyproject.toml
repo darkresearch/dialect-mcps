@@ -3,30 +3,10 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "jupiter-mcp"
+name = "dialect-mcps"
 version = "0.1.0"
-description = "An MCP server for Jupiter swaps using Dialect Blink"
+description = "A collection of MCP servers for Dialect Solana Blinks"
 requires-python = ">=3.10"
 authors = [
     {name = "Dark Research"}
 ]
-dependencies = [
-    "fastmcp==2.2.6",
-    "requests>=2.28.0",
-    "pydantic>=2.0.0",
-    "python-dotenv>=1.0.0",
-]
-
-[project.optional-dependencies]
-dev = [
-    "black",
-    "isort",
-    "pytest",
-]
-
-[tool.black]
-line-length = 100
-
-[tool.isort]
-profile = "black"
-line_length = 100 
