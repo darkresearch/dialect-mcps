@@ -6,7 +6,7 @@ A FastMCP server for performing Jupiter swaps using Dialect Blink
 
 import os
 import urllib.parse
-from typing import Annotated, Literal, Optional
+from typing import Optional
 
 import requests
 from dotenv import load_dotenv
@@ -113,15 +113,11 @@ def jupiter_swap(
 
 # Set up description for the server
 mcp.description = """
-Jupiter Swap MCP enables token swaps on Jupiter DEX via Dialect Blink API.
-Provides a simple interface for executing swaps between Solana-based tokens.
+Jupiter SWAP MCP enables token swaps on Solana.
+It provides a simple interface to execute swaps based on the token name
+OR the token contract address. When possible, use the token contract address
+for precision.
 """
-
-# Prompt suggestion for Claude
-mcp.prompt_suggestions = [
-    "Swap 0.1 SOL for DARK tokens",
-    "Exchange USDC for SOL using my wallet address",
-]
 
 if __name__ == "__main__":
     mcp.run()
